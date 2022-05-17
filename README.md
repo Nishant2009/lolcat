@@ -9,7 +9,7 @@ pkg install python -y
 pip install git+https://github.com/Nishant2009/lolcat.git
 ```
 
-###[+] Usage
+###[+] For Usage Example
 ```shell script
-lolcat
+date | lolcat
 ```
