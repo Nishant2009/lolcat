@@ -10,6 +10,7 @@ pip install git+https://github.com/Nishant2009/lolcat.git
 ```
 
 ### [+] For Usage Example
+Type 
 ```shell script
 date | lolcat
 ```
