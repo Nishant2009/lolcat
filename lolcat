@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/python3
 #
-# "THE Coffee-WARE LICENSE" 
+# "THE Coffee-WARE LICENSE"
 #
 # <https://github.com/Nishant2009> wrote these files. As long as you retain this notice you
 # can do whatever you want with this stuff. If we meet some day, and you think
@@ -8,6 +8,7 @@
 
 from __future__ import print_function
 
+import argparse
 import atexit
 import math
 import os
@@ -18,6 +19,9 @@ import time
 from signal import signal, SIGPIPE, SIG_DFL
 
 PY3 = sys.version_info >= (3,)
+
+# lolcat version
+version = "7.0 BY NISHANT"
 
 # override default handler so no exceptions on SIGPIPE
 signal(SIGPIPE, SIG_DFL)
@@ -249,5 +253,13 @@ def run():
             # exit 130 for terminated-by-ctrl-c, from http://tldp.org/LDP/abs/html/exitcodes.html
             return 130
 
+parser = argparse.ArgumentParser(epilog='Coded by Nishant !!!')
+parser.add_argument("-v", "--version", action="store_true",
+                    help="show current lolcat version")
+
 if __name__ == '__main__':
-    sys.exit(run())
+    args = parser.parse_args()
+    if args.version:
+        print("Version: ", version)
+    else:
+        sys.exit(run())
